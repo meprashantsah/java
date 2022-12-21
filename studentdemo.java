@@ -38,8 +38,9 @@ public class studentdemo {
             st[i].branch=sc.next();
             System.out.println("Enter phone no.");
             st[i].phone=sc.nextLong();
-
-
+        }
+        for (i = 0; i < n; i++)
+        {
             st[i].display();
         }
     }
