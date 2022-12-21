@@ -1,67 +1,52 @@
-package project1;
+import java.util.Scanner;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-class studentdemo
+class student
 {
-	String usn,name,branch;
-	long phoneno;
-	
-	public studentdemo()
-	{
-		usn=branch=name="";
-		phoneno=0;
-	}
-	
-	public void read(String n, String u, String b, long p)
-	{
-		name=n;
-		usn=u;
-		branch=b;
-		phoneno=p;
-	}
-	public void display()
-	{
-		System.out.println(name+"\t"+usn+"\t"+branch+"\t"+phoneno);
-		
-	}
+    String usn,name,branch;
+    long phone;
+    public void display()
+    {
+
+        System.out.println("USN=" + usn);
+        System.out.println("NAME=" + name);
+        System.out.println("BRANCH" + branch);
+        System.out.println("PHONE NO.=" + phone);
+    }
+
 }
-public class student {
+public class studentdemo {
 
-	public static void main(String[] args)throws IOException
-	{
-		String u,n,b;
-		long p;
-		int no;
-		studentdemo s[]=new studentdemo[10];
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("enter the number of students");
-		no= Integer.parseInt(br.readLine());
-		
-		for (int i =0;i<no;i++)
-		{
-			s[i]=new studentdemo();
-			System.out.println("enter your name");
-			n=br.readLine();
-			System.out.println("enter your usn");
-			u=br.readLine();
-			System.out.println("enter your branch");
-			b=br.readLine();
-			System.out.println("enter your phone number");
-			p=Long.parseLong(br.readLine());
-			s[i].read(n, u, b, p);
+    public static void main(String[] args){
 
-		}
-		System.out.println("the details are");
-		System.out.println("NAME\tUSN\tBRANCH\tPHONENO");
-		
-		for (int i=0;i<no;i++)
-		{
-			s[i].display();
-		}
-		
+        Scanner sc=new Scanner(System.in);
+        int n;
+        System.out.println("Enter the number of students");
+        n=sc.nextInt();
+        student[] st= new student[n];
 
-	}
+            int i;
+            for (i = 0; i < n; i++) {
+                st[i] = new student();
+
+            }
+
+        for(i= 0; i<n ;i++)
+        {
+            System.out.println("Enter the details of students"+(i-1));
+            System.out.println("Enter usn");
+            st[i].usn=sc.next();
+            System.out.println("Enter name");
+            st[i].name=sc.next();
+            System.out.println("Enter branch");
+            st[i].branch=sc.next();
+            System.out.println("Enter phone no.");
+            st[i].phone=sc.nextLong();
+
+        }
+        for (i= 0; i<n; i++)
+        {
+            st[i].display();
+        }
+    }
+
 }
