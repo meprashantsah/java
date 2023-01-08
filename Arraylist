@@ -37,11 +37,11 @@ public class arlist {
                 case 7:
                     ch.sort();
                     break;
-                default: {
+                default:
                     System.out.println("Thanks for using!!!");
                     System.exit(0);
                     break;
-                }
+                
             }
         }
     }
