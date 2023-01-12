@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class autonofic {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int n,res;
+		System.out.println("Enter a number");
+		n=sc.nextInt();
+		res=n*n; 
+		String s1,s2;
+		s1=Integer.toString(n);
+		s2=Integer.toString(res);
+		
+		if(s2.endsWith(s1)) {
+			System.out.println("The number is autonpfic");
+		}
+		else
+			System.out.println("The number is not autonpfic");
+	}
+
+}
