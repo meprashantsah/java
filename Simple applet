@@ -1,0 +1,22 @@
+package oopslab;
+
+import java.awt.*;
+import java.applet.*;
+import java.util.Scanner;
+
+public class SimpleApplet {
+	public void paint(Graphics g) {
+			g.drawString("Welcome",150,150);
+			
+	}
+}
+class Input{
+public static void main(String[] args) {
+	
+	Scanner input=new Scanner(System.in);
+	System.out.print("Enter your name");
+	String inp=input.next();
+	System.out.print("Hello,"+inp);
+	
+	}
+}
