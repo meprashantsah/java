@@ -13,11 +13,14 @@ public class ArithmeticExcp{
             if (b==0) {
                 throw new ArithmeticException();
             }
-            res = a / b;
-            System.out.println("The result is" + res);
-        } 
+            else {
+                res = a / b;
+                System.out.println("The result is" + res);
+            }
+        }
         catch (ArithmeticException e) {
             e.printStackTrace();
         }
     }
 }
+
