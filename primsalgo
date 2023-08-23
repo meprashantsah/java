@@ -1,0 +1,57 @@
+# java
+  import java.util.Scanner;
+class Prim{
+	public static void myprim(int[][]adj,int N){
+		int i,j,vnodes,min,mincost=0,u=0,v=0;
+		int []visit=new int[N];
+		for(i=0;i<N;i++){
+			visit[i]=0;
+		visit[0]=1;
+		vnodes=1;
+		while(vnodes<N){
+			min=999;
+			for(i=0;i<N;i++){
+				if(visit[i]==1){
+					for(j=0;j<N;j++)
+						if(adj[i][j]<min && visit[j]==0){
+							min=adj[i][j];
+							u=i;
+							v=j;
+							
+						}
+				}
+			}
+			visit[v]=1;
+			mincost+=min;
+			vnodes++;
+			System.out.printf("Edge %d-%d:(%d)\n",u,v,min);
+		}
+		System.out.println("Cost:"+mincost);
+		}
+	}
+}
+
+
+
+
+public class primsalgo {
+
+	public static void main(String[] args) {
+		int[][]adj;
+		int N,i,j,S,D;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number of node sin the graph");
+		N=sc.nextInt();
+		adj=new int[N][N];
+		System.out.println("enter the adjacency matrix");
+		System.out.println("enter 999 if no no connection and weights foe connection");
+		for(i=0;i<N;i++)
+			for(j=0;j<N;j++)
+				adj[i][j]=sc.nextInt();
+			Prim.myprim(adj,N);
+			
+		
+
+	}
+
+}
