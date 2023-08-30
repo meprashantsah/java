@@ -1,0 +1,76 @@
+# java
+import java.util.Scanner;
+
+class HamilCycle{
+	int N,cyclecount;
+	int adj[][];
+	public void read_graph(){
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number of nodes in the graph");
+		this.N=sc.nextInt();
+		int i,j;
+		this.adj=new int[N][N];
+		System.out.println("Enter the adjecency matrix 0(no edge) 1(edge)");
+		for(i=0;i<N;i++){
+			for(j=0;j<N;j++){
+				this.adj[i][j]=sc.nextInt();
+			
+			}
+		}
+	}
+	public void findcycle(){
+		int i,u;
+		cyclecount=0;
+		int solarr[]=new int[N];
+		int visited[]=new int[N];
+		for(i=0;i<N;i++)
+			visited[i]=0;
+		visited[0]=1;
+		solarr[0]=0;
+		findrec(0,solarr,visited);
+//		visited[0]=0;
+		if (cyclecount==0){
+			System.out.println("No hamiltonion cycle found");
+		}
+	}
+	
+	void findrec(int length,int arr[],int visited[]){
+		int i,j;
+		if(length==N-1 && adj[arr[length]][arr[0]]==1)
+			printcycle(arr);
+		else{
+			for(j=0;j<N;j++){
+				if (visited[j]==0 && adj[arr[length]][j]==1){
+					visited[j]=1;
+					arr[length+1]=j;
+					findrec(length+1,arr,visited);
+					visited[j]=0;
+				}
+			}
+		}
+	}
+	
+	void printcycle(int solarr[]){
+		cyclecount++;
+		System.out.print("cycle no"+cyclecount+":");
+		for(int i=0;i<N;i++)
+			System.out.print(solarr[i]+1+"->");
+			System.out.println(solarr[0]+1);
+	}
+}
+
+
+public class HCycle {
+
+	
+	public static void main(String[] args) {
+		
+		HamilCycle obj=new HamilCycle();
+		obj.read_graph();
+		obj.findcycle();
+		
+
+	}
+
+}
