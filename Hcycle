@@ -29,7 +29,7 @@ class HamilCycle{
 		visited[0]=1;
 		solarr[0]=0;
 		findrec(0,solarr,visited);
-//		visited[0]=0;
+		visited[0]=0;
 		if (cyclecount==0){
 			System.out.println("No hamiltonion cycle found");
 		}
