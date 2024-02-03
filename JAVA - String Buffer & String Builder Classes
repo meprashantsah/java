@@ -1,0 +1,46 @@
+public class StringBufferExample {
+    public static void main(String[] args) {
+        // StringBuffer Methods
+        StringBuffer stringBuffer = new StringBuffer("Hello");
+
+        // append() Method
+        stringBuffer.append(" World");
+        System.out.println("After append(): " + stringBuffer); // Output: Hello World
+
+        // reverse() Method
+        stringBuffer.reverse();
+        System.out.println("After reverse(): " + stringBuffer); // Output: dlroW olleH
+
+        // delete() Method
+        stringBuffer.delete(3, 8);
+        System.out.println("After delete(): " + stringBuffer); // Output: dlW olleH
+
+        // insert() Method
+        stringBuffer.insert(3, "come ");
+        System.out.println("After insert(): " + stringBuffer); // Output: dlW come olleH
+
+        // replace() Method
+        stringBuffer.replace(4, 9, "back");
+        System.out.println("After replace(): " + stringBuffer); // Output: dlW back olleH
+
+        // String Length
+        System.out.println("Length of the string: " + stringBuffer.length()); // Output: 15
+
+        // Concatenating Strings
+        String str1 = "Hello";
+        String str2 = " World";
+        StringBuffer concatBuffer = new StringBuffer(str1);
+        concatBuffer.append(str2);
+        System.out.println("Concatenated String: " + concatBuffer); // Output: Hello World
+
+        // Creating Format Strings using StringBuilder
+        int num = 42;
+        String formattedString = String.format("The number is %d", num);
+        System.out.println("Formatted String: " + formattedString); // Output: The number is 42
+
+        // Using StringBuilder for dynamic string building
+        StringBuilder stringBuilder = new StringBuilder("This ");
+        stringBuilder.append("is ").append("a ").append("dynamic ").append("string.");
+        System.out.println("Dynamic String: " + stringBuilder); // Output: This is a dynamic string.
+    }
+}
