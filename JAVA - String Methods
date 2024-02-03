@@ -1,0 +1,86 @@
+public class StringMethodsExample {
+    public static void main(String[] args) {
+        // String chartAt() Method
+        String str = "Hello, World!";
+        char charAtIndex = str.charAt(7);
+        System.out.println("charAt(7): " + charAtIndex); // Output: W
+
+        // String compareTo(Object o) Method
+        String str1 = "apple";
+        String str2 = "banana";
+        int compareResult = str1.compareTo(str2);
+        System.out.println("compareTo(): " + compareResult); // Output: -1 (lexicographically smaller)
+
+        // String compareTo(String anotherString) Method
+        int compareResultIgnoreCase = str1.compareToIgnoreCase("Apple");
+        System.out.println("compareToIgnoreCase(): " + compareResultIgnoreCase); // Output: 0 (equal)
+
+        // String concat() Method
+        String concatResult = str1.concat("s");
+        System.out.println("concat(): " + concatResult); // Output: apples
+
+        // String contentEquals() Method
+        StringBuilder stringBuilder = new StringBuilder("apple");
+        boolean contentEqualsResult = str1.contentEquals(stringBuilder);
+        System.out.println("contentEquals(): " + contentEqualsResult); // Output: true
+
+        // String copyValueOf(char[] data) Method
+        char[] charArray = {'H', 'e', 'l', 'l', 'o'};
+        String copyValueOfResult = String.copyValueOf(charArray);
+        System.out.println("copyValueOf(): " + copyValueOfResult); // Output: Hello
+
+        // String endsWith() Method
+        boolean endsWithResult = str.endsWith("World!");
+        System.out.println("endsWith(): " + endsWithResult); // Output: true
+
+        // String equals() Method
+        boolean equalsResult = str1.equals("apple");
+        System.out.println("equals(): " + equalsResult); // Output: true
+
+        // String getBytes() Method
+        byte[] bytes = str.getBytes();
+        System.out.println("getBytes(): " + new String(bytes)); // Output: Hello, World!
+
+        // String hashCode() Method
+        int hashCodeResult = str.hashCode();
+        System.out.println("hashCode(): " + hashCodeResult);
+        //output : hashCode(): 1498789909
+
+        // String indexOf(int ch) Method
+        int indexOfResult = str.indexOf('o');
+        System.out.println("indexOf(): " + indexOfResult); // Output: 4
+
+        // String lastIndexOf(int ch) Method
+        int lastIndexOfResult = str.lastIndexOf('o');
+        System.out.println("lastIndexOf(): " + lastIndexOfResult); // Output: 8
+
+        // String length() Method
+        int lengthResult = str.length();
+        System.out.println("length(): " + lengthResult); // Output: 13
+
+        // String replace() Method
+        String replaceResult = str.replace('o', '0');
+        System.out.println("replace(): " + replaceResult); // Output: Hell0, W0rld!
+
+        // String substring() Method
+        String substringResult = str.substring(7);
+        System.out.println("substring(): " + substringResult); // Output: World!
+
+        // String toLowerCase() Method
+        String toLowerCaseResult = str.toLowerCase();
+        System.out.println("toLowerCase(): " + toLowerCaseResult); // Output: hello, world!
+
+        // String toUpperCase() Method
+        String toUpperCaseResult = str.toUpperCase();
+        System.out.println("toUpperCase(): " + toUpperCaseResult); // Output: HELLO, WORLD!
+
+        // String trim() Method
+        String trimResult = "   Trim me!   ".trim();
+        System.out.println("trim(): '" + trimResult + "'"); // Output: 'Trim me!'
+
+        // String valueOf() Method
+        int intValue = 42;
+        String valueOfResult = String.valueOf(intValue);
+        System.out.println("valueOf(): " + valueOfResult); // Output: 42
+    }
+}
