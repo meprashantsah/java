@@ -1,0 +1,52 @@
+public class CharacterExample {
+    public static void main(String[] args) {
+        // Escape sequences
+        char newLine = '\n';
+        char tab = '\t';
+
+        System.out.println("Escape Sequences:");
+        System.out.println("Hello" + newLine + "World"); // Output: Hello
+                                                         //         World
+        System.out.println("Java" + tab + "Programming"); // Output: Java    Programming
+
+        // Character Methods
+        char ch = 'A';
+
+        // isLetter() Method
+        System.out.println("\nCharacter.isLetter() Example:");
+        System.out.println("Is 'A' a letter? " + Character.isLetter(ch)); // Output: true
+        System.out.println("Is '1' a letter? " + Character.isLetter('1')); // Output: false
+
+        // isDigit() Method
+        System.out.println("\nCharacter.isDigit() Example:");
+        System.out.println("Is '5' a digit? " + Character.isDigit('5')); // Output: true
+        System.out.println("Is 'A' a digit? " + Character.isDigit('A')); // Output: false
+
+        // isWhitespace() Method
+        System.out.println("\nCharacter.isWhitespace() Example:");
+        System.out.println("Is space whitespace? " + Character.isWhitespace(' ')); // Output: true
+        System.out.println("Is 'A' whitespace? " + Character.isWhitespace('A')); // Output: false
+
+        // isUpperCase() Method
+        System.out.println("\nCharacter.isUpperCase() Example:");
+        System.out.println("Is 'A' uppercase? " + Character.isUpperCase('A')); // Output: true
+        System.out.println("Is 'a' uppercase? " + Character.isUpperCase('a')); // Output: false
+
+        // isLowerCase() Method
+        System.out.println("\nCharacter.isLowerCase() Example:");
+        System.out.println("Is 'a' lowercase? " + Character.isLowerCase('a')); // Output: true
+        System.out.println("Is 'A' lowercase? " + Character.isLowerCase('A')); // Output: false
+
+        // toUpperCase() Method
+        System.out.println("\nCharacter.toUpperCase() Example:");
+        System.out.println("Convert 'a' to uppercase: " + Character.toUpperCase('a')); // Output: A
+
+        // toLowerCase() Method
+        System.out.println("\nCharacter.toLowerCase() Example:");
+        System.out.println("Convert 'A' to lowercase: " + Character.toLowerCase('A')); // Output: a
+
+        // toString() Method
+        System.out.println("\nCharacter.toString() Example:");
+        System.out.println("Convert 'X' to String: " + Character.toString('X')); // Output: X
+    }
+}
